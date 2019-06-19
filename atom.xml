@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhangyanneng.github.io</id>
     <title>GeekZyn</title>
-    <updated>2019-06-19T09:15:17.182Z</updated>
+    <updated>2019-06-19T09:41:09.060Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhangyanneng.github.io"/>
     <link rel="self" href="https://zhangyanneng.github.io/atom.xml"/>
@@ -11,44 +11,55 @@
     <icon>https://zhangyanneng.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, GeekZyn</rights>
     <entry>
-        <title type="html"><![CDATA[测试标题]]></title>
-        <id>https://zhangyanneng.github.io/post/ce-shi-biao-ti</id>
-        <link href="https://zhangyanneng.github.io/post/ce-shi-biao-ti">
+        <title type="html"><![CDATA[Nginx配置到个人服务器]]></title>
+        <id>https://zhangyanneng.github.io/post/nginx-pei-zhi-dao-ge-ren-fu-wu-qi</id>
+        <link href="https://zhangyanneng.github.io/post/nginx-pei-zhi-dao-ge-ren-fu-wu-qi">
         </link>
-        <updated>2019-06-19T08:58:52.000Z</updated>
-        <content type="html"><![CDATA[<p>为啥字呢</p>
+        <updated>2019-06-19T09:20:00.000Z</updated>
+        <content type="html"><![CDATA[<h3 id="1安装">1.安装</h3>
+<p>apt-get install software-properties-common
+add-apt-repository ppa:nginx/stable
+apt-get update
+apt-get install nginx</p>
+<h3 id="2安装目录查找方式">2.安装目录查找方式</h3>
+<p>whereis nginx</p>
+<pre><code>nginx: /usr/sbin/nginx /etc/nginx /usr/lib/nginx /usr/share/nginx /usr/share/man/man8/nginx.8.gz
+</code></pre>
+<p>对应的几个目录就是
+/usr/sbin/nginx
+/etc/nginx
+/usr/lib/nginx
+/usr/share/nginx
+/usr/share/man/man8/nginx.8.gz</p>
+<h3 id="3启动">3.启动</h3>
+<p>/usr/sbin/nginx</p>
+<h3 id="4检查配置状态">4.检查配置状态</h3>
+<p>nginx -t
+提示如下：</p>
+<pre><code>nginx: the configuration file /etc/nginx/nginx.conf syntax is ok
+nginx: configuration file /etc/nginx/nginx.conf test is successful
+</code></pre>
+<h3 id="5停止">5.停止</h3>
+<p>nginx -s stop</p>
+<h3 id="6重启">6.重启</h3>
+<p>service nginx restart</p>
+<h3 id="6卸载">6.卸载</h3>
+<p>apt-get remove nginx  # 删除nginx，保留配置文件
+rm -rf /etc/nginx  #删除配置文件</p>
+<p>关于nginx的参考资料
+http://www.nginx.cn
+http://www.nginx.cn/install
+http://tengine.taobao.org/book/chapter_09.html
+https://www.cnblogs.com/fengff/p/8892590.html</p>
 ]]></content>
     </entry>
     <entry>
-        <title type="html"><![CDATA[Hello Gridea]]></title>
-        <id>https://zhangyanneng.github.io/post/hello-gridea</id>
-        <link href="https://zhangyanneng.github.io/post/hello-gridea">
+        <title type="html"><![CDATA[测试标题]]></title>
+        <id>https://zhangyanneng.github.io/post/test-title</id>
+        <link href="https://zhangyanneng.github.io/post/test-title">
         </link>
-        <updated>2018-12-03T16:00:00.000Z</updated>
-        <summary type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-]]></summary>
-        <content type="html"><![CDATA[<p>👏  欢迎使用 <strong>Gridea</strong> ！<br>
-✍️  <strong>Gridea</strong> 一个静态博客写作客户端。你可以用它来记录你的生活、心情、知识、笔记、创意... ...</p>
-<!-- more -->
-<p><a href="https://github.com/getgridea/gridea">Github</a><br>
-<a href="http://hvenotes.fehey.com/">Gridea 主页</a><br>
-<a href="http://fehey.com/">示例网站</a></p>
-<h2 id="特性">特性👇</h2>
-<p>📝  你可以使用最酷的 <strong>Markdown</strong> 语法，进行快速创作</p>
-<p>🌉  你可以给文章配上精美的封面图和在文章任意位置插入图片</p>
-<p>🏷️  你可以对文章进行标签分组</p>
-<p>📋  你可以自定义菜单，甚至可以创建外部链接菜单</p>
-<p>💻  你可以在 <strong>𝖶𝗂𝗇𝖽𝗈𝗐𝗌</strong> 或 <strong>𝖬𝖺𝖼𝖮𝖲</strong> 设备上使用此客户端</p>
-<p>🌎  你可以使用 <strong>𝖦𝗂𝗍𝗁𝗎𝖻 𝖯𝖺𝗀𝖾𝗌</strong> 或 <strong>Coding Pages</strong> 向世界展示，未来将支持更多平台</p>
-<p>💬  你可以进行简单的配置，接入 <a href="https://github.com/gitalk/gitalk">Gitalk</a> 或 <a href="https://github.com/SukkaW/DisqusJS">DisqusJS</a> 评论系统</p>
-<p>🇬🇧  你可以使用<strong>中文简体</strong>或<strong>英语</strong></p>
-<p>🌁  你可以任意使用应用内默认主题或任意第三方主题，强大的主题自定义能力</p>
-<p>🖥  你可以自定义源文件夹，利用 OneDrive、百度网盘、iCloud、Dropbox 等进行多设备同步</p>
-<p>🌱 当然 <strong>Gridea</strong> 还很年轻，有很多不足，但请相信，它会不停向前🏃</p>
-<p>未来，它一定会成为你离不开的伙伴</p>
-<p>尽情发挥你的才华吧！</p>
-<p>😘 Enjoy~</p>
+        <updated>2019-06-19T08:58:52.000Z</updated>
+        <content type="html"><![CDATA[<p>为啥字呢</p>
 ]]></content>
     </entry>
 </feed>
