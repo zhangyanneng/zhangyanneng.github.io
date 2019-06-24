@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>CocoaPods | GeekZyn</title>
+<meta name="description" content="温故而知新">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://zhangyanneng.github.io/favicon.ico?v=1561358124911">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://zhangyanneng.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://zhangyanneng.github.io">
+        <img src="https://zhangyanneng.github.io/images/avatar.png?v=1561358124911" class="site-logo">
+        <h1 class="site-title">GeekZyn</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/zhangyanneng" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      温故而知新
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://zhangyanneng.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">CocoaPods</h2>
+            <div class="post-date">2019-06-24</div>
+            
+              <div class="feature-container" style="background-image: url('https://zhangyanneng.github.io/post-images/cocoapods.jpg')">
+              </div>
+            
+            <div class="post-content">
+              <h4 id="一-简介">一、简介</h4>
+<p>CocoaPods是专门为iOS工程提供第三方依赖库的管理工具，通过CocoaPods，我们可以更方便地管理每个第三方库的版本，而且不需要我们做太多的配置，就可以直观、集中和自动化地管理我们项目的第三方库。
+CocoaPods将所有依赖的库都放在一个名为Pods的项目下，然后让主项目依赖Pods项目。然后，我们编码工作都从主项目转移到Pods项目。Pods项目最终会编译为一个libPod-项目名.a静态库，主项目依赖于这个静态库。
+对于资源文件，CocoaPods 提供了一个名为 Pods-resources.sh 的 bash 脚本，该脚本在每次项目编译的时候都会执行，将第三方库的各种资源文件复制到目标目录中。
+CocoaPods 通过一个名为 Pods.xcconfig 的文件来在编译时设置所有的依赖和参数。
+CocoaPods是用 Ruby 写的，并由若干个 Ruby 包 (gems) 构成的。在解析整合过程中，最重要的几个 gems 分别是： CocoaPods/CocoaPods, CocoaPods/Core, 和 CocoaPods/Xcodeproj。</p>
+<h4 id="二-cocoapod的核心组件">二、CocoaPod的核心组件</h4>
+<h6 id="cocoapodscocoapod">CocoaPods/CocoaPod</h6>
+<p>这是是一个面向用户的组件，每当执行一个 pod 命令时，这个组件都将被激活。该组件包括了所有使用 CocoaPods 涉及到的功能，并且还能通过调用所有其它的 gems 来执行任务。</p>
+<h6 id="cocoapodscore">CocoaPods/Core</h6>
+<p>Core 组件提供支持与 CocoaPods 相关文件的处理，文件主要是 Podfile 和 podspecs。</p>
+<h6 id="podfile">Podfile</h6>
+<p>Podfile 是一个文件，用于定义项目所需要使用的第三方库。该文件支持高度定制，你可以根据个人喜好对其做出定制。更多相关信息，请查阅 Podfile 指南。</p>
+<h6 id="podspec">Podspec</h6>
+<p>.podspec 也是一个文件，该文件描述了一个库是怎样被添加到工程中的。它支持的功能有：列出源文件、framework、编译选项和某个库所需要的依赖等。</p>
+<h6 id="cocoapodsxcodeproj">CocoaPods/Xcodeproj</h6>
+<p>这个 gem 组件负责所有工程文件的整合。它能够对创建并修改 .xcodeproj 和 .xcworkspace 文件。它也可以作为单独的一个 gem 包使用。如果你想要写一个脚本来方便的修改工程文件，那么可以使用这个 gem。</p>
+<h4 id="三-多模块书写">三、多模块书写</h4>
+<pre><code class="language-Swift"># Uncomment the next line to define a global platform for your project
+platform :ios, '9.0'
+
+#通用模块
+def commonPods
+  pod 'Alamofire', '4.8.2'
+  pod 'SnapKit', '4.2.0'
+end
+
+target 'LWFinancialApp' do
+  # Comment the next line if you don't want to use dynamic frameworks
+  use_frameworks!
+
+  commonPods
+
+  target 'LWFinancialAppTests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+  target 'LWFinancialAppUITests' do
+    inherit! :search_paths
+    # Pods for testing
+  end
+
+end
+
+</code></pre>
+<h4 id="四-忽略pods警告">四、忽略Pods警告</h4>
+<p>在Podfile中对应的target或分组下加上关键字inhibit_all_warnings</p>
+
+            </div>
+            
+              <div class="tag-container">
+                
+                  <a href="https://zhangyanneng.github.io/tag/1pDQgNVrr" class="tag">
+                    swift
+                  </a>
+                
+              </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://zhangyanneng.github.io/post/nginx-pei-zhi-dao-ge-ren-fu-wu-qi">
+                  <h3 class="post-title">
+                    Nginx配置到个人服务器
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
