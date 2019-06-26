@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhangyanneng.github.io</id>
-    <title>GeekZyn</title>
-    <updated>2019-06-26T03:44:05.094Z</updated>
+    <title>落寒</title>
+    <updated>2019-06-26T03:49:33.283Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhangyanneng.github.io"/>
     <link rel="self" href="https://zhangyanneng.github.io/atom.xml"/>
-    <subtitle>古之立大事者，
-不惟有超世之才，
-亦必有坚忍不拔之志。</subtitle>
+    <subtitle>立事者，不惟有超世之才，亦必有坚忍不拔之志。</subtitle>
     <logo>https://zhangyanneng.github.io/images/avatar.png</logo>
     <icon>https://zhangyanneng.github.io/favicon.ico</icon>
-    <rights>All rights reserved 2019, GeekZyn</rights>
+    <rights>All rights reserved 2019, 落寒</rights>
     <entry>
         <title type="html"><![CDATA[iOS 对ipv4 和ipv6的支持]]></title>
         <id>https://zhangyanneng.github.io/post/ios-dui-ipv4-he-ipv6-de-zhi-chi</id>
