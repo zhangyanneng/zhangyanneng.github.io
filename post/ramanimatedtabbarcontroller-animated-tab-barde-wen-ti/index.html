@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" >
 
-<title>iOS 对ipv4 和ipv6的支持 | 落寒</title>
+<title>RAMAnimatedTabBarController (animated-tab-bar)的问题 | 落寒</title>
 <meta name="description" content="立事者，不惟有超世之才，亦必有坚忍不拔之志。">
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -96,53 +96,22 @@
       <div class="main-container">
         <div class="content-container" data-aos="fade-up">
           <div class="post-detail">
-            <h2 class="post-title">iOS 对ipv4 和ipv6的支持</h2>
-            <div class="post-date">2019-06-26</div>
-            
-              <div class="feature-container" style="background-image: url('https://zhangyanneng.github.io/post-images/ios-dui-ipv4-he-ipv6-de-zhi-chi.png')">
-              </div>
+            <h2 class="post-title">RAMAnimatedTabBarController (animated-tab-bar)的问题</h2>
+            <div class="post-date">2019-06-27</div>
             
             <div class="post-content">
-              <!-- IPv6 是“互联网协议第 6 版”的缩写。IPv6 是互联网的下一代协议，用于取代当前的互联网协议，即 IP 第 4 版。 -->
-<h3 id="1什么是ipv6">1.什么是IPv6？</h3>
-<p>IPv6 是“互联网协议第 6 版”的缩写。IPv6 是互联网的下一代协议，用于取代当前的互联网协议，即 IP 第 4 版。
-为了通过互联网进行通信，电脑和其他设备必须有发送者和接收者地址。这些数字地址称为互联网协议地址。由于互联网的普及以及使用人数大幅增长，因此对于 IP 地址的需求也与日俱增。
-IPv6 是由互联网工程任务组（一个开发互联网技术的组织）所开发的标准。由于预计到对 IP 地址的需求不断增加，因此 IETF 制订了 IPv6 来应对越来越多的互联网用户数和设备。
-IPv6 使用更大的数字创建 IP 地址，可让更多用户和设备通过 Internet 进行通信。在使用 IPv4 的情况下，每个 IP 地址的长度是 32 位，共可允许 43 亿个独一无二的地址。IPv4 地址示例如下：
-172.16.254.1
-相比之下，IPv6 地址是 128 位，共可允许近 340 万亿个独一无二的 IP 地址。IPv6 地址示例如下：
-2001:db8:ffff:1:201:02ff:fe03:0405
-IPv6 还有其他网络优势。大多数情况下，电脑和应用程序会检测并利用支持 IPv6 的网络和服务，不需要用户进行任何操作。IPv6 还能缓解由于 IPv4 提供的地址数量有限而造成的其他网络问题。例如，IPv6 减少了网络地址转换的需求，此服务可让多个客户端共享一个 IP 地址，但不一定都可靠。</p>
-<p>要测试 IPv6 的连接，您可以访问“<a href="http://test-ipv6.com/">测试您的 IPv6</a>”。</p>
-<h3 id="2ios中需要做兼容性处理的">2.iOS中需要做兼容性处理的</h3>
-<p>下图中蓝色部分API是不需要考虑的，苹果已经在iOS9之后进行了支持，红色部分是需要自己去支持ipv6的，需要注意。
-<img src="https://zhangyanneng.github.io/post-images/1561520104882.png" alt=""></p>
-<p>需要支持的参考<a href="https://tools.ietf.org/html/rfc4038">Application Aspects of IPv6 Transition</a></p>
-<h3 id="3reachability中已经添加了对ipv6的支持">3.Reachability中已经添加了对IPv6的支持</h3>
-<p><a href="https://github.com/AFNetworking/AFNetworking/pull/3174/files">Added support for IPv6 to Reachability #3174</a></p>
-<h3 id="4不兼容ipv6的api">4.不兼容IPv6的API</h3>
-<p>以下是针对IPv4进行处理的API，需要进行替换和删除</p>
-<pre><code>inet_addr()
-inet_aton()
-inet_lnaof()
-inet_makeaddr()
-inet_netof()
-inet_network()
-inet_ntoa()
-inet_ntoa_r()
-bindresvport()
-getipv4sourcefilter()
-setipv4sourcefilter()
-</code></pre>
-<p>以下方法需要对应处理
-<img src="https://zhangyanneng.github.io/post-images/1561520625410.png" alt=""></p>
+              <p>这个框架遇到的问题</p>
+<p>1.如果在自定义的TabBarController:RAMAnimatedTabBarController的viewDidLoad方法中添加子控制，要注意 super.viewDidLoad()的掉用必须在添加完之后掉用
+2.添加子控制器时，必须self.addChild(nav) 之后在设置navVC.tabBarItem = item，否则无动画效果
+3.选中的效果图标animation.iconSelectedColor 属性决定, 文字由 textSelectedColor决定, 所以 let item = RAMAnimatedTabBarItem(title: title, image: image, selectedImage: selecteImage) 中的selectedImage 是没有效果的</p>
+<p>参考：<a href="http://www.pianshen.com/article/5965243774/">分析 第三方框架 RAMAnimatedTabBarController (animated-tab-bar)</a></p>
 
             </div>
             
               <div class="tag-container">
                 
-                  <a href="https://zhangyanneng.github.io/tag/l1KUIceO-" class="tag">
-                    iOS
+                  <a href="https://zhangyanneng.github.io/tag/1pDQgNVrr" class="tag">
+                    swift
                   </a>
                 
               </div>
@@ -150,9 +119,9 @@ setipv4sourcefilter()
             
               <div class="next-post">
                 <div class="next">下一篇</div>
-                <a href="https://zhangyanneng.github.io/post/cocoapods">
+                <a href="https://zhangyanneng.github.io/post/ios-bu-tong-xi-tong-tong-ji-qing-kuang">
                   <h3 class="post-title">
-                    CocoaPods
+                    iOS不同系统统计情况
                   </h3>
                 </a>
               </div>
