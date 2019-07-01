@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://zhangyanneng.github.io</id>
     <title>落寒</title>
-    <updated>2019-06-28T08:33:39.266Z</updated>
+    <updated>2019-07-01T09:11:57.361Z</updated>
     <generator>https://github.com/jpmonette/feed</generator>
     <link rel="alternate" href="https://zhangyanneng.github.io"/>
     <link rel="self" href="https://zhangyanneng.github.io/atom.xml"/>
@@ -10,6 +10,13 @@
     <logo>https://zhangyanneng.github.io/images/avatar.png</logo>
     <icon>https://zhangyanneng.github.io/favicon.ico</icon>
     <rights>All rights reserved 2019, 落寒</rights>
+    <entry>
+        <title type="html"><![CDATA[Ubuntu：Wiki.js安装 -----未完善]]></title>
+        <id>https://zhangyanneng.github.io/post/ubuntuwikijs-an-zhuang</id>
+        <link href="https://zhangyanneng.github.io/post/ubuntuwikijs-an-zhuang">
+        </link>
+        <updated>2019-07-01T07:07:45.000Z</updated>
+    </entry>
     <entry>
         <title type="html"><![CDATA[开源公司集合]]></title>
         <id>https://zhangyanneng.github.io/post/kai-yuan-gong-si-ji-he</id>

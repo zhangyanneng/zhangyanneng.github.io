@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" >
+
+<title>Ubuntu：Wiki.js安装 -----未完善 | 落寒</title>
+<meta name="description" content="立事者，不惟有超世之才，亦必有坚忍不拔之志。">
+
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+<link rel="shortcut icon" href="https://zhangyanneng.github.io/favicon.ico?v=1561972315006">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.10.0/katex.min.css">
+<link rel="stylesheet" href="https://zhangyanneng.github.io/styles/main.css">
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script src="https://cdn.bootcss.com/highlight.js/9.12.0/highlight.min.js"></script>
+
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+
+
+  </head>
+  <body>
+    <div id="app" class="main">
+
+      <div class="sidebar" :class="{ 'full-height': menuVisible }">
+  <div class="top-container" data-aos="fade-right">
+    <div class="top-header-container">
+      <a class="site-title-container" href="https://zhangyanneng.github.io">
+        <img src="https://zhangyanneng.github.io/images/avatar.png?v=1561972315006" class="site-logo">
+        <h1 class="site-title">落寒</h1>
+      </a>
+      <div class="menu-btn" @click="menuVisible = !menuVisible">
+        <div class="line"></div>
+      </div>
+    </div>
+    <div>
+      
+        
+          <a href="/" class="site-nav">
+            首页
+          </a>
+        
+      
+        
+          <a href="/archives" class="site-nav">
+            归档
+          </a>
+        
+      
+        
+          <a href="/tags" class="site-nav">
+            标签
+          </a>
+        
+      
+        
+          <a href="/post/about" class="site-nav">
+            关于
+          </a>
+        
+      
+    </div>
+  </div>
+  <div class="bottom-container" data-aos="flip-up" data-aos-offset="0">
+    <div class="social-container">
+      
+        
+          <a class="social-link" href="https://github.com/zhangyanneng" target="_blank">
+            <i class="fab fa-github"></i>
+          </a>
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    </div>
+    <div class="site-description">
+      立事者，不惟有超世之才，亦必有坚忍不拔之志。
+    </div>
+    <div class="site-footer">
+      Powered by <a href="https://github.com/getgridea/gridea" target="_blank">Gridea</a> | <a class="rss" href="https://zhangyanneng.github.io/atom.xml" target="_blank">RSS</a>
+    </div>
+  </div>
+</div>
+
+
+      <div class="main-container">
+        <div class="content-container" data-aos="fade-up">
+          <div class="post-detail">
+            <h2 class="post-title">Ubuntu：Wiki.js安装 -----未完善</h2>
+            <div class="post-date">2019-07-01</div>
+            
+            <div class="post-content">
+              <p>说明：Wiki.js是一个基于Node.js，Git和Markdown构建的免费开源，现代且功能强大的wiki应用程序。支持用户登录，可以让用户在本地注册或直接使用Microsoft，Google，GitHub等账户无缝登录体验，并选择限制对特定用户或甚至部分内容的Wiki访问。还可以定时远程备份数据到Git远程仓库。支持Windows，Linux和Mac平台，这里就说下Linux系统手动安装教程。</p>
+<p>功能特性</p>
+<pre><code>#Markdown编辑，由Git支持
+使用内置的可视化编辑器，以广泛使用的简单Markdown格式编写您的内容。与将数据保存在难以提取格式的数据库中的其他wiki软件不同，Wiki.js将所有内容直接保存到Markdown（.md）文件中，并且该内容会自动与远程Git存储库同步。因此，您的内容可以直接从您的Git存储库中安全地读取。    
+
+#轻巧，但功能非常强大
+Wiki.js在速度极快的Node.js引擎上运行，并且优化为CPU资源不足。它在很大程度上依赖于缓存来快速向用户提供内容，并利用最新的Web技术（如WebSockets）在网页中提供即时交互性。
+
+#精美的现代网络设计
+内容自动处理成美观的阅读格式，呈现在优雅的用户界面中。根据标题为每个页面生成侧边栏菜单，并以不同颜色呈现部分以增强可读性。
+
+#综合访问控制
+选择限制对特定用户或甚至部分内容的Wiki访问。您可以完全控制Wiki.js中内置的易于使用的访问控制。使用本地数据库登录或与Microsoft帐户，Google ID，Facebook，GitHub，Slack或LDAP（Active Directory）等外部身份验证提供程序连接，为您的用户提供无缝登录体验。
+
+#直觉资产管理
+使用内置资产管理器在Wiki.js中插入图像，模式，文档，视频，链接等。将媒体文件整理到文件夹中，让内置编辑器为您生成正确的Markdown标记。您甚至可以要求Wiki.js为您从外部网站获取图像。再一次，所有文件都会自动同步到远程Git存储库以便妥善保管。
+
+#内置搜索引擎
+使用内置搜索引擎快速查找您正在寻找的wiki条目，可从任何页面访问。它通过分析您的wiki条目元数据和内容提供相关结果和建议。
+
+#免费和开源
+我们相信优秀的软件应该是免费和透明的。这就是为什么Wiki.js在GNU AGPLv3许可下是完全开源的原因。您可以自由查看完整的源代码并提供新功能！将其托管在本地服务器，云端甚至家中。免费。
+</code></pre>
+<p>手动安装
+Github地址：https://github.com/Requarks/wiki/</p>
+<p>环境要求：Node.js &gt;= 6.11.1、MongoDB &gt;= 3.2、Git &gt;= 2.7.4。内存768M以上，不然装不了。</p>
+<p>1、安装Git</p>
+<p>apt-get update -y
+apt-get install -y git
+安装好了后，使用git --version命令查看git版本，大于等于2.7.4就可以了。</p>
+<p>如果是1.9.1,则进行升级
+sudo add-apt-repository ppa:git-core/ppa
+sudo apt-get update
+sudo apt-get install git</p>
+<p>如果add-apt-repository命令未找到：
+sudo apt-get install python-software-properties</p>
+<p>2、安装Nodejs</p>
+<p>curl -sL https://deb.nodesource.com/setup_10.x | bash -
+apt-get install -y nodejs</p>
+<p>3、安装Mongodb</p>
+<pre><code>sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 9DA31620334BD75D9DCB49F368818C72E52529D4
+
+echo &quot;deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu xenial/mongodb-org/4.0 multiverse&quot; | sudo tee /etc/apt/sources.list.d/mongodb.list
+
+sudo apt update
+
+sudo apt install mongodb
+</code></pre>
+<p>也可以直接安装指定版本的mongoDB</p>
+<pre><code>sudo apt install mongodb-org=4.0.1 mongodb-org-server=4.0.1 mongodb-org-shell=4.0.1 mongodb-org-mongos=4.0.1 mongodb-org-tools=4.0.1
+</code></pre>
+<p>官方安装地址
+https://docs.mongodb.com/v3.2/tutorial/install-mongodb-on-ubuntu/</p>
+<p>4、安装wiki.js</p>
+<p>#创建存放wiki.js的文件夹并进入
+mkdir /root/wikijs &amp;&amp; cd /root/wikijs
+#安装wiki.js
+curl -sSo- https://wiki.js.org/install.sh | bash
+5、配置wiki.js
+node wiki configure</p>
+
+            </div>
+            
+            
+              <div class="next-post">
+                <div class="next">下一篇</div>
+                <a href="https://zhangyanneng.github.io/post/kai-yuan-gong-si-ji-he">
+                  <h3 class="post-title">
+                    开源公司集合
+                  </h3>
+                </a>
+              </div>
+            
+
+            
+
+          </div>
+
+        </div>
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
+<script type="application/javascript">
+
+AOS.init();
+
+hljs.initHighlightingOnLoad()
+
+var app = new Vue({
+  el: '#app',
+  data: {
+    menuVisible: false,
+  },
+})
+
+</script>
+
+
+
+
+  </body>
+</html>
